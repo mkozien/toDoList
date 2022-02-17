@@ -1,25 +1,41 @@
 <app-navbar></app-navbar>
-<div class="row">
-    <div class="d-flex align-items-start">
+<div class="container">
+    <div class="row">
         <div class="col-4">
             <div class="item-title">
-                <span class="item-title-text">DODAJ ZADANIE</span>
+                <div class="item-title-text">DODAJ ZADANIE</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nazwa zadania" name="task">
+                    </div>
+                    <div class="form-group">
+                        <div class="task-priority">
+                            <div class="task-priority-text">
+                            <input type="checkbox" class="form-check-input" name="priority-check" id="priority-check" value="yes">
+                            <label class="form-check-label" for="priority-check">Oznacz jako priorytet</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="add-button-div">
+                        <button class="btn btn-success add-button">Dodaj</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="col-8">
             <div class="item-title">
-                <span class="item-title-text">AKTUALNE ZADANIA</span>
+                <div class="item-title-text">AKTUALNE ZADANIA</div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="d-flex align-items-end">
+    <div class="row">
         <div class="col-4">
         </div>
         <div class="col-8">
             <div class="item-title">
-                <span class="item-title-text">WYKONANE ZADANIA</span>
+                <div class="item-title-text">WYKONANE ZADANIA</div>
             </div>
         </div>
     </div>
