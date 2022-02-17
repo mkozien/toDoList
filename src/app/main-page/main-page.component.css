@@ -1,11 +1,12 @@
 .row {
     position: relative;
-    top: 80px;
+    top: 50px;
   }
 
 #tasks {
-    height: 108px;
-    line-height: 100px;
+    height: 138px;
+    width: 416px;
+    line-height: 130px;
     background-color: #198754;
     border: 1px solid #198754;
     border-radius: 15px;
@@ -14,28 +15,30 @@
 }
 
 #shop {
-    height: 108px;
-    line-height: 100px;
+    height: 138px;
+    width: 416px;
+    line-height: 130px;
     background-color: #be2222;
     border: 1px solid #be2222;
     border-radius: 15px;
     text-align: center;
     margin: 30px;
-    position: relative;
 }
 
 #books {
-    height: 108px;
-    line-height: 100px;
+    height: 138px;
+    width: 416px;
+    line-height: 130px;
     background-color: #ff7b00;
     border: 1px solid #ff7b00;
     border-radius: 15px;
     text-align: center;
     margin: 30px;
-    position: relative;
 }
 
 #tasks-button, #shop-button, #books-button {
+    width: 250px;
+    font-size: 30px;
     color: white;
     font-weight: bold;
     display: inline-block;
@@ -43,8 +46,19 @@
     line-height: normal;
 }
 
+#tasks-icon, #shop-icon, #books-icon {
+    width: 128px;
+    font-size: 60px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
 #tasks:hover, #shop:hover, #books:hover {
-    height: 116px;
+    height: 138px;
+    width: 416px;
+    line-height: 122px;
     border: 5px solid rgba(35, 35, 39, 0.9);
     opacity: 0.8;
     cursor: pointer;
