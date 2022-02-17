@@ -1,0 +1,51 @@
+.row {
+    position: relative;
+    top: 80px;
+  }
+
+#tasks {
+    height: 108px;
+    line-height: 100px;
+    background-color: #198754;
+    border: 1px solid #198754;
+    border-radius: 15px;
+    text-align: center;
+    margin: 30px;
+}
+
+#shop {
+    height: 108px;
+    line-height: 100px;
+    background-color: #be2222;
+    border: 1px solid #be2222;
+    border-radius: 15px;
+    text-align: center;
+    margin: 30px;
+    position: relative;
+}
+
+#books {
+    height: 108px;
+    line-height: 100px;
+    background-color: #ff7b00;
+    border: 1px solid #ff7b00;
+    border-radius: 15px;
+    text-align: center;
+    margin: 30px;
+    position: relative;
+}
+
+#tasks-button, #shop-button, #books-button {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+#tasks:hover, #shop:hover, #books:hover {
+    height: 116px;
+    border: 5px solid rgba(35, 35, 39, 0.9);
+    opacity: 0.8;
+    cursor: pointer;
+}
