@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { Task } from '../models/tasks-task';
+import { TasksService } from '../services/tasks/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -6,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
+  currentTasks: Task[] = [];
 
-  constructor() { }
+  constructor(private taskService: TasksService) {}
 
-  ngOnInit(): void {
+  addCurrentTask(form: NgForm) {
+    const body: Task = new Task(form.value.name, form.value.priority);
+    console.log(body);
+
+    this.taskService.addTask(body);
   }
+
+  ngOnInit(): void {}
 
 }

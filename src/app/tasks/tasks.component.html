@@ -6,21 +6,21 @@
                 <div class="item-title-text">DODAJ ZADANIE</div>
             </div>
             <div class="add-item-form">
-                <form class="form-container">
+                <form class="form-container" (ngSubmit)="addCurrentTask(form)" #form="ngForm">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nazwa zadania" name="task">
+                        <input type="text" class="form-control" placeholder="Nazwa zadania" name="name" ngModel required>
                     </div>
                     <div class="form-group">
                         <div class="task-priority">
                             <div class="task-priority-text">
-                                <input type="checkbox" class="form-check-input" name="priority-check"
-                                    id="priority-check" value="yes">
+                                <input type="checkbox" class="form-check-input" name="priority"
+                                    id="priority-check" value="true" ngModel>
                                 <label class="form-check-label" for="priority-check">Oznacz jako priorytet</label>
                             </div>
                         </div>
                     </div>
                     <div class="add-button-div">
-                        <button class="btn btn-success add-button">Dodaj</button>
+                        <button type="submit" class="btn btn-success add-button" [disabled]="!form.valid && form.touched">Dodaj</button>
                     </div>
                 </form>
             </div>
