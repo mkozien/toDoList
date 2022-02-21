@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { Task } from '../../models/tasks-task';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TasksService {
   currentTasks: Task[] = [];
 
-  constructor() { }
+  constructor() {}
 
   addTask(task: Task) {
     this.currentTasks.push(task);
@@ -18,15 +18,9 @@ export class TasksService {
   }
 
   getTasks() {
-    const currentTasksObservable = new Observable<Task[]>((observer) => {
-      console.log(observer);
+    const currentTasksObservable = new Observable((observer) => {
       observer.next(this.currentTasks);
-      console.log(observer)
-      console.log(currentTasksObservable)
-      return currentTasksObservable
-    })
-
-    }
-
+    });
+    return currentTasksObservable;
+  }
 }
-
