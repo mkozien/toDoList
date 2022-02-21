@@ -12,16 +12,23 @@ import { TasksService } from '../services/tasks/tasks.service';
   styleUrls: ['./tasks.component.css'],
 })
 export class TasksComponent implements OnInit, OnDestroy {
+  priority: boolean;
   currentTasks: Task[] = [];
   private currentTasksSubscription: Subscription;
 
   constructor(private taskService: TasksService) {}
 
-  addCurrentTask(form: NgForm) {
-    const body: Task = new Task(form.value.name, form.value.priority);
+  onAddCurrentTask(form: NgForm) {
+    console.log(form.value.priority);
+    if (form.value.priority === '' || form.value.priority === null) {
+      this.priority = false;
+    } else {
+      this.priority = form.value.priority;
+    }
+    const body: Task = new Task(form.value.name, this.priority);
     console.log(body);
 
-    this.taskService.addTask(body);
+    this.taskService.addCurrentTask(body);
     form.reset();
   }
 

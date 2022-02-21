@@ -12,9 +12,14 @@ export class TasksService {
 
   constructor() {}
 
-  addTask(task: Task) {
+  addCurrentTask(task: Task) {
+    task.id++;
     this.currentTasks.push(task);
     console.log(this.currentTasks);
+  }
+
+  deleteTask(task: Task) {
+    // const index = this.currentTasks.findIndex((i) => i.currentTasks === task)
   }
 
   getTasks() {
