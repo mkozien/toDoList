@@ -51,8 +51,8 @@
                             </div>
                             <div class="col-3 pending-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-cart-check task-icon"></span>
-                                    <span class="bi bi-cart-x task-icon"></span>
+                                    <span class="bi bi-cart-check task-icon" (click)="onMarkAsBought(productToBuy.id)"></span>
+                                    <span class="bi bi-cart-x task-icon" (click)="onDeleteProductToBuy(productToBuy.id)"></span>
                                 </div>
                             </div>
                         </div>
@@ -68,17 +68,17 @@
             <div class="item-title">
                 <div class="item-title-text">ZAKUPIONE PRODUKTY</div>
             </div>
-            <div>
+            <div *ngFor="let boughtProduct of boughtProducts">
                 <div class="tasks-div marked-as-done">
                     <div class="done-task">
                         <div class="row">
                             <div class="col-9 pending-task-div">
-                                <div class="pending-task-text">Zakupiony produkt - 1 szt.</div>
+                                <div class="pending-task-text">{{boughtProduct.name}} - {{boughtProduct.quantity}} {{boughtProduct.unit}}</div>
                             </div>
                             <div class="col-3 pending-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
-                                    <span class="bi bi-cart-x task-icon"></span>
+                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetProductBack(boughtProduct.id)"></span>
+                                    <span class="bi bi-cart-x task-icon" (click)="onDeleteBoughtProduct(boughtProduct.id)"></span>
                                 </div>
                             </div>
                         </div>

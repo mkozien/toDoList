@@ -14,8 +14,8 @@ import { ShopService } from '../services/shop/shop.service';
 export class ShopComponent implements OnInit, OnDestroy {
   productsToBuy: Product[] = [];
   productsToBuySubscription: Subscription;
-  // boughtProducts: Product[] = [];
-  // boughtsProductsSubscription: Subscription;
+  boughtProducts: Product[] = [];
+  boughtsProductsSubscription: Subscription;
 
   constructor(private shopService: ShopService) {}
 
@@ -28,7 +28,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     );
     console.log(body);
 
-    this.shopService.addProduct(body);
+    this.shopService.addProductToBuy(body);
     form.reset();
   }
 
@@ -36,13 +36,42 @@ export class ShopComponent implements OnInit, OnDestroy {
     form.reset();
   }
 
+  onDeleteProductToBuy(id: number) {
+    this.shopService.deleteProductToBuy(id);
+    console.log(this.productsToBuy);
+  }
+
+  onDeleteBoughtProduct(id: number) {
+    this.shopService.deleteBoughtProduct(id);
+    console.log(this.boughtProducts);
+  }
+
+  onMarkAsBought(id: number) {
+    this.shopService.markAsBought(id);
+    console.log(this.productsToBuy);
+    console.log(this.boughtProducts);
+  }
+
+  onGetProductBack(id: number) {
+    this.shopService.getProductBack(id);
+    console.log(this.productsToBuy);
+    console.log(this.boughtProducts);
+  }
+
   ngOnInit(): void {
     this.productsToBuySubscription = this.shopService
-    .getProductsToBuy()
-    .subscribe((productsToBuy: Product[]) => {
-      this.productsToBuy = productsToBuy;
-    });
-  console.log(this.productsToBuy);
+      .getProductsToBuy()
+      .subscribe((productsToBuy: Product[]) => {
+        this.productsToBuy = productsToBuy;
+      });
+    console.log(this.productsToBuy);
+
+    this.boughtsProductsSubscription = this.shopService
+      .getBoughtProducts()
+      .subscribe((boughtProducts: Product[]) => {
+        this.boughtProducts = boughtProducts;
+      });
+    console.log(this.boughtProducts);
   }
 
   ngOnDestroy(): void {
