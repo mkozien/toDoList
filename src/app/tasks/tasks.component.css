@@ -125,3 +125,15 @@ pending-task-div, .done-task-div {
   margin: 7px;
   color: white;
 }
+
+.task-icon:hover {
+  font-size: 30px;
+  background-color: rgba(35, 35, 39, 0.9);
+  padding-bottom: 3px;
+  border: 2px solid rgba(35, 35, 39, 0.9);
+  border-radius: 5px;
+}
+
+.priority-task {
+  background-color: #be2222;
+}

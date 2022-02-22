@@ -30,7 +30,7 @@
                 <div class="item-title-text">AKTUALNE ZADANIA</div>
             </div>
             <div *ngFor="let currentTask of currentTasks">
-                <div class="tasks-div">
+                <div class="tasks-div" [ngClass]="{'priority-task': currentTask.priority === true}">
                     <div class="pending-task">
                         <div class="row">
                             <div class="col-9 pending-task-div">
@@ -38,9 +38,9 @@
                             </div>
                             <div class="col-3 pending-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-flag task-icon"></span>
+                                    <span class="bi bi-flag task-icon" (click)="onChangePriority(currentTask.id)"></span>
                                     <span class="bi bi-check2-square task-icon"></span>
-                                    <span class="bi bi-trash task-icon"></span>
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteTask(currentTask.id)"></span>
                                 </div>
                             </div>
                         </div>

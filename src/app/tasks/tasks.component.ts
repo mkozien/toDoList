@@ -15,6 +15,8 @@ export class TasksComponent implements OnInit, OnDestroy {
   priority: boolean;
   currentTasks: Task[] = [];
   private currentTasksSubscription: Subscription;
+  doneTasks: Task[] = [];
+  private doneTasksSubscription: Subscription;
 
   constructor(private taskService: TasksService) {}
 
@@ -25,11 +27,21 @@ export class TasksComponent implements OnInit, OnDestroy {
     } else {
       this.priority = form.value.priority;
     }
-    const body: Task = new Task(form.value.name, this.priority);
+    const body: Task = new Task(this.taskService.idGiven++, form.value.name, this.priority);
     console.log(body);
 
     this.taskService.addCurrentTask(body);
     form.reset();
+  }
+
+  onDeleteTask(id: number) {
+    this.taskService.deleteTask(id);
+    console.log(this.currentTasks)
+  }
+
+  onChangePriority(id: number) {
+    this.taskService.changePriority(id);
+    console.log(this.currentTasks)
   }
 
   ngOnInit(): void {

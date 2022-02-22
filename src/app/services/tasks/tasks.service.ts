@@ -8,18 +8,27 @@ import { Task } from '../../models/tasks-task';
   providedIn: 'root',
 })
 export class TasksService {
+  idGiven: number = 1;
   currentTasks: Task[] = [];
+  doneTasks: Task[] = [];
 
   constructor() {}
 
   addCurrentTask(task: Task) {
-    task.id++;
     this.currentTasks.push(task);
     console.log(this.currentTasks);
   }
 
-  deleteTask(task: Task) {
-    // const index = this.currentTasks.findIndex((i) => i.currentTasks === task)
+  deleteTask(taskId: number) {
+    const index = this.currentTasks.findIndex((i) => i.id === taskId);
+    this.currentTasks.splice(index, 1);
+  }
+
+  changePriority(taskId: number) {
+    const index = this.currentTasks.findIndex((i) => i.id === taskId);
+    console.log(this.currentTasks[index].priority);
+    this.currentTasks[index].priority = !this.currentTasks[index].priority;
+    console.log(this.currentTasks[index].priority);
   }
 
   getTasks() {

@@ -1,10 +1,10 @@
 export class Task {
-    id: number;
+    id?: number;
     name: string;
     priority: boolean;
 
-    constructor(name: string, priority: boolean) {
-        this.id = 0;
+    constructor(id: number, name: string, priority: boolean) {
+        this.id = id;
         this.name = name;
         this.priority = priority;
     }
