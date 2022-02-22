@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { Product } from 'src/app/models/product';
+import { Product } from '../../models/product';
 
 @Injectable({
   providedIn: 'root',
