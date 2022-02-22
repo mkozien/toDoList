@@ -27,13 +27,13 @@
   border-radius: 10px;
 }
 
+input, select {
+  color: #6c757d;
+}
+
 input[type="text"] {
   border: 1px solid rgba(35, 35, 39, 0.9);
   margin-bottom: 20px;
-}
-
-#small-input-div {
-  padding-left: 0;
 }
 
 .small-input {
@@ -60,6 +60,7 @@ input[type="text"] {
 }
 
 .add-button-div {
+  margin-top: 20px;
   text-align: center;
 }
 
