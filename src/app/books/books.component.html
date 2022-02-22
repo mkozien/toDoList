@@ -1,2 +1,102 @@
 <app-navbar></app-navbar>
-<p>books works!</p>
+<div class="container">
+    <div class="row" id="top-row">
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">DODAJ TYTUŁ</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tytuł" name="name" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Autor" name="name" ngModel required>
+                    </div>
+                    <div class="button-div">
+                        <button type="submit" class="btn btn-success add-button">Dodaj</button>
+                        <button type="submit" class="btn btn-danger reset-button">Resetuj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">W TRAKCIE CZYTANIA</div>
+            </div>
+            <div>
+                <div class="tasks-div">
+                    <div class="pending-task">
+                        <div class="row">
+                            <div class="col-8 pending-task-div">
+                                <div class="pending-task-text">PRZYKŁAD</div>
+                                <div class="pending-task-text">PRZYKŁAD</div>
+                            </div>
+                            <div class="col-2 current-page-div">
+                                <div class="current-page-text" id="page-label">Strona</div>
+                                <div class="current-page-text" id="page">1220</div>
+                            </div>
+                            <div class="col-2 pending-task-icon-div">
+                                <div class="all-icons-div">
+                                    <div class="task-icon-div">
+                                        <span class="bi bi-pen task-icon"></span>
+                                        <span class="bi bi-book-fill task-icon"></span>
+                                    </div>
+                                    <div class="task-icon-div">
+                                        <span class="bi bi-trash task-icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">OCZEKUJĄCE TYTUŁY</div>
+            </div>
+            <div>
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row">
+                            <div class="col-9 pending-task-div">
+                                <div class="pending-task-text">PRZYKŁAD</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
+                                    <span class="bi bi-cart-x task-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">PRZECZYTANE TYTUŁY</div>
+            </div>
+            <div>
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row">
+                            <div class="col-9 pending-task-div">
+                                <div class="pending-task-text">PRZYKŁAD</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
+                                    <span class="bi bi-cart-x task-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
