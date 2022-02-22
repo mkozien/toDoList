@@ -59,7 +59,7 @@
                 <div class="item-title-text">WYKONANE ZADANIA</div>
             </div>
             <div *ngFor="let doneTask of doneTasks">
-                <div class="tasks-div">
+                <div class="tasks-div marked-as-done">
                     <div class="done-task">
                         <div class="row">
                             <div class="col-9 pending-task-div">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-3 pending-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
+                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetTaskBack(doneTask.id)"></span>
                                     <span class="bi bi-trash task-icon" (click)="onDeleteDoneTask(doneTask.id)"></span>
                                 </div>
                             </div>

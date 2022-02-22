@@ -138,3 +138,7 @@ pending-task-div, .done-task-div {
 .priority-task {
   background-color: #be2222;
 }
+
+.marked-as-done {
+  opacity: 0.5;
+}

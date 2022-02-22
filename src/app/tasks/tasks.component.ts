@@ -55,9 +55,13 @@ export class TasksComponent implements OnInit, OnDestroy {
     console.log(this.doneTasks);
   }
 
-  ngOnInit(): void {
+  onGetTaskBack(id: number) {
+    this.taskService.getTaskBack(id);
     console.log(this.currentTasks);
     console.log(this.doneTasks);
+  }
+
+  ngOnInit(): void {
     this.currentTasksSubscription = this.taskService
       .getCurrentTasks()
       .subscribe((currentTasks: Task[]) => {

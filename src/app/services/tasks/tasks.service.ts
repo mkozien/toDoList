@@ -42,6 +42,12 @@ export class TasksService {
     this.currentTasks.splice(index, 1);
   }
 
+  getTaskBack(taskId: number) {
+    const index = this.doneTasks.findIndex((i) => i.id === taskId);
+    this.currentTasks.push(this.doneTasks[index]);
+    this.doneTasks.splice(index, 1);
+  }
+
   getCurrentTasks() {
     const currentTasksObservable = new Observable((observer) => {
       observer.next(this.currentTasks);
