@@ -34,27 +34,47 @@ export class TasksComponent implements OnInit, OnDestroy {
     form.reset();
   }
 
-  onDeleteTask(id: number) {
-    this.taskService.deleteTask(id);
-    console.log(this.currentTasks)
+  onDeleteCurrentTask(id: number) {
+    this.taskService.deleteCurrentTask(id);
+    console.log(this.currentTasks);
+  }
+
+  onDeleteDoneTask(id: number) {
+    this.taskService.deleteDoneTask(id);
+    console.log(this.doneTasks);
   }
 
   onChangePriority(id: number) {
     this.taskService.changePriority(id);
-    console.log(this.currentTasks)
+    console.log(this.currentTasks);
+  }
+
+  onMarkAsDone(id: number) {
+    this.taskService.markAsDone(id);
+    console.log(this.currentTasks);
+    console.log(this.doneTasks);
   }
 
   ngOnInit(): void {
     console.log(this.currentTasks);
+    console.log(this.doneTasks);
     this.currentTasksSubscription = this.taskService
-      .getTasks()
+      .getCurrentTasks()
       .subscribe((currentTasks: Task[]) => {
         this.currentTasks = currentTasks;
       });
     console.log(this.currentTasks);
+
+    this.doneTasksSubscription = this.taskService
+    .getDoneTasks()
+    .subscribe((doneTasks: Task[]) => {
+      this.doneTasks = doneTasks;
+    });
+  console.log(this.doneTasks);
   }
 
   ngOnDestroy(): void {
     this.currentTasksSubscription.unsubscribe();
+    this.doneTasksSubscription.unsubscribe();
   }
 }

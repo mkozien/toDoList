@@ -19,9 +19,14 @@ export class TasksService {
     console.log(this.currentTasks);
   }
 
-  deleteTask(taskId: number) {
+  deleteCurrentTask(taskId: number) {
     const index = this.currentTasks.findIndex((i) => i.id === taskId);
     this.currentTasks.splice(index, 1);
+  }
+
+  deleteDoneTask(taskId: number) {
+    const index = this.doneTasks.findIndex((i) => i.id === taskId);
+    this.doneTasks.splice(index, 1);
   }
 
   changePriority(taskId: number) {
@@ -31,10 +36,23 @@ export class TasksService {
     console.log(this.currentTasks[index].priority);
   }
 
-  getTasks() {
+  markAsDone(taskId: number) {
+    const index = this.currentTasks.findIndex((i) => i.id === taskId);
+    this.doneTasks.push(this.currentTasks[index]);
+    this.currentTasks.splice(index, 1);
+  }
+
+  getCurrentTasks() {
     const currentTasksObservable = new Observable((observer) => {
       observer.next(this.currentTasks);
     });
     return currentTasksObservable;
+  }
+
+  getDoneTasks() {
+    const doneTasksObservable = new Observable((observer) => {
+      observer.next(this.doneTasks);
+    });
+    return doneTasksObservable;
   }
 }

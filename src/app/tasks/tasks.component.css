@@ -132,6 +132,7 @@ pending-task-div, .done-task-div {
   padding-bottom: 3px;
   border: 2px solid rgba(35, 35, 39, 0.9);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .priority-task {
