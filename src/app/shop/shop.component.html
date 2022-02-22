@@ -1,2 +1,98 @@
 <app-navbar></app-navbar>
-<p>shop works!</p>
+<div class="container">
+    <div class="row" id="top-row">
+        <div class="col-4">
+            <div class="item-title">
+                <div class="item-title-text">DODAJ PRODUKT</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nazwa produktu" name="name" ngModel
+                            required>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group">
+                                <input type="text" class="form-control small-input" placeholder="Ilość" name="name" ngModel
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-5" id="small-input-div">
+                            <div class="form-group">
+                                <input type="text" class="form-control small-input" placeholder="Jedn." name="name" ngModel
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-2 reset-button">
+                            <span class="bi bi-x-square-fill reset-icon"></span>
+                        </div>
+                    </div>
+                    <div class="add-button-div">
+                        <button type="submit" class="btn btn-success add-button">Dodaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">LISTA ZAKUPÓW</div>
+            </div>
+            <div>
+                <div class="tasks-div">
+                    <div class="pending-task">
+                        <div class="row">
+                            <div class="col-5 pending-task-div">
+                                <div class="pending-task-text">Produkt do kupienia</div>
+                            </div>
+                            <div class="col-2 pending-task-div">
+                                <div class="pending-task-text">1</div>
+                            </div>
+                            <div class="col-2 pending-task-div">
+                                <div class="pending-task-text">szt.</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-cart-check task-icon"></span>
+                                    <span class="bi bi-cart-x task-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-4">
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">ZAKUPIONE PRODUKTY</div>
+            </div>
+            <div>
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row">
+                            <div class="col-5 pending-task-div">
+                                <div class="pending-task-text">Zakupiony produkt</div>
+                            </div>
+                            <div class="col-2 pending-task-div">
+                                <div class="pending-task-text">1</div>
+                            </div>
+                            <div class="col-2 pending-task-div">
+                                <div class="pending-task-text">szt.</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
+                                    <span class="bi bi-cart-x task-icon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

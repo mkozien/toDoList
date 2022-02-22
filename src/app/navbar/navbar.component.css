@@ -25,7 +25,7 @@
 }
 
 #nav-shop:hover {
-    background-color: #be2222;
+    background-color: #000063;
     border: 2px solid white;
     cursor: pointer;
 }
@@ -37,7 +37,7 @@
 }
 
 #nav-main:hover {
-    background-color: #000063;
+    background-color: #be2222;
     border: 2px solid white;
     cursor: pointer;
 }
