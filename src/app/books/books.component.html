@@ -25,26 +25,28 @@
                 <div class="item-title-text">W TRAKCIE CZYTANIA</div>
             </div>
             <div>
-                <div class="tasks-div">
+                <div class="tasks-div pending">
                     <div class="pending-task">
-                        <div class="row">
+                        <div class="row task-row">
                             <div class="col-8 pending-task-div">
-                                <div class="pending-task-text">PRZYKŁAD</div>
-                                <div class="pending-task-text">PRZYKŁAD</div>
+                                <div class="pending-task-text" id="book-title">PRZYKŁAD</div>
+                                <div class="pending-task-text">Przykład</div>
                             </div>
                             <div class="col-2 current-page-div">
                                 <div class="current-page-text" id="page-label">Strona</div>
                                 <div class="current-page-text" id="page">1220</div>
                             </div>
-                            <div class="col-2 pending-task-icon-div">
-                                <div class="all-icons-div">
-                                    <div class="task-icon-div">
-                                        <span class="bi bi-pen task-icon"></span>
-                                        <span class="bi bi-book-fill task-icon"></span>
-                                    </div>
-                                    <div class="task-icon-div">
-                                        <span class="bi bi-trash task-icon"></span>
-                                    </div>
+                            <div class="col-1">
+                                <div id="page-edit-icon-div">
+                                    <span class="bi bi-pen" id="page-edit-icon"></span>
+                                </div>
+                            </div>
+                            <div class="col-1 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-book-fill task-icon"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon"></span>
                                 </div>
                             </div>
                         </div>
@@ -59,16 +61,19 @@
                 <div class="item-title-text">OCZEKUJĄCE TYTUŁY</div>
             </div>
             <div>
-                <div class="tasks-div marked-as-done">
-                    <div class="done-task">
-                        <div class="row">
-                            <div class="col-9 pending-task-div">
-                                <div class="pending-task-text">PRZYKŁAD</div>
+                <div class="tasks-div awaiting">
+                    <div class="awaiting-task">
+                        <div class="row task-row">
+                            <div class="col-9 awaiting-task-div">
+                                <div class="awaiting-task-text" id="book-title">PRZYKŁAD</div>
+                                <div class="awaiting-task-text">Przykład</div>
                             </div>
-                            <div class="col-3 pending-task-icon-div">
+                            <div class="col-3 awaiting-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-arrow-counterclockwise task-icon"></span>
-                                    <span class="bi bi-cart-x task-icon"></span>
+                                    <span class="bi bi-book-half task-icon"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon"></span>
                                 </div>
                             </div>
                         </div>
@@ -83,14 +88,17 @@
             <div>
                 <div class="tasks-div marked-as-done">
                     <div class="done-task">
-                        <div class="row">
-                            <div class="col-9 pending-task-div">
-                                <div class="pending-task-text">PRZYKŁAD</div>
+                        <div class="row task-row">
+                            <div class="col-9 done-task-div">
+                                <div class="done-task-text" id="book-title">PRZYKŁAD</div>
+                                <div class="done-task-text">Przykład</div>
                             </div>
-                            <div class="col-3 pending-task-icon-div">
+                            <div class="col-3 done-task-icon-div">
                                 <div class="task-icon-div">
                                     <span class="bi bi-arrow-counterclockwise task-icon"></span>
-                                    <span class="bi bi-cart-x task-icon"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon"></span>
                                 </div>
                             </div>
                         </div>

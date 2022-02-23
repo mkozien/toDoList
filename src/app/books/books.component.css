@@ -70,30 +70,33 @@ input:focus {
   background-color: #ff7b00;
 }
 
+.awaiting-task,
 .pending-task,
 .done-task {
   max-height: 100px;
-  max-width: 600px;
+  max-width: 580px;
   line-height: 34px;
   border-radius: 10px;
 }
 
-pending-task-div,
-.done-task-div {
-  width: 40px;
-  height: 40px;
-  margin: 0;
+.task.row {
+  max-width: 580px;
 }
 
+.awaiting-task-text,
 .pending-task-text,
 .done-task-text {
-  max-width: 400px;
+  max-width: 380px;
   max-height: 51.2px;
   vertical-align: middle;
   line-height: normal;
   margin: 5px 20px;
   font-size: 19px;
   color: white;
+}
+
+#book-title {
+  font-style: italic;
 }
 
 .current-page-div {
@@ -118,17 +121,37 @@ pending-task-div,
   font-size: 28px;
 }
 
-.all-icons-div {
+#page-edit-icon-div {
   max-width: 50px;
+  text-align: center;
+  line-height: 58px;
 }
 
+#page-edit-icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 30px;
+  color: white;
+}
+
+#page-edit-icon:hover {
+  background-color: rgba(108, 108, 114, 0.9);
+  border: 3px solid rgba(108, 108, 114, 0.9);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.awaiting-task-icon-div,
 .pending-task-icon-div,
 .done-task-icon-div {
-  width: 100px;
+  max-width: 200px;
   max-height: 34px;
   margin: 0;
+  padding: 0;
 }
 
+.awaiting-task-icon,
 .pending-task-icon,
 .done-task-icon {
   display: inline-block;
@@ -137,7 +160,7 @@ pending-task-div,
 }
 
 .task-icon-div {
-  width: 80px;
+  max-width: 200px;
   height: 34px;
   margin: 0;
   text-align: right;
@@ -159,4 +182,8 @@ pending-task-div,
 
 .marked-as-done {
   opacity: 0.5;
+}
+
+.awaiting {
+  opacity: 0.8;
 }

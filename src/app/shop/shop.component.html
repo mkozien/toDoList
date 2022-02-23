@@ -72,10 +72,10 @@
                 <div class="tasks-div marked-as-done">
                     <div class="done-task">
                         <div class="row">
-                            <div class="col-9 pending-task-div">
-                                <div class="pending-task-text">{{boughtProduct.name}} - {{boughtProduct.quantity}} {{boughtProduct.unit}}</div>
+                            <div class="col-9 done-task-div">
+                                <div class="done-task-text">{{boughtProduct.name}} - {{boughtProduct.quantity}} {{boughtProduct.unit}}</div>
                             </div>
-                            <div class="col-3 pending-task-icon-div">
+                            <div class="col-3 done-task-icon-div">
                                 <div class="task-icon-div">
                                     <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetProductBack(boughtProduct.id)"></span>
                                     <span class="bi bi-cart-x task-icon" (click)="onDeleteBoughtProduct(boughtProduct.id)"></span>
