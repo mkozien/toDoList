@@ -64,7 +64,7 @@ input:focus {
 .tasks-div {
   max-height: 100px;
   max-width: 600px;
-  margin: auto;
+  margin: 20px auto;
   border: 3px solid rgba(35, 35, 39, 0.9);
   border-radius: 10px;
   background-color: #ff7b00;
