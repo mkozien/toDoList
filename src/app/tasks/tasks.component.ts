@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
 
-import { Task } from '../models/tasks-task';
+import { Task } from '../models/task';
 import { TasksService } from '../services/tasks/tasks.service';
 
 @Component({

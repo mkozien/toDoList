@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { Task } from '../../models/tasks-task';
+import { Task } from '../../models/task';
 
 @Injectable({
   providedIn: 'root',
