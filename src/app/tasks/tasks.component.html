@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row" id="top-row">
+        <div class="col-4">
+            <div class="item-title">
+                <div class="item-title-text">DODAJ ZADANIE</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container" (ngSubmit)="onAddCurrentTask(form)" #form="ngForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nazwa zadania" name="name" ngModel
+                            required>
+                    </div>
+                    <div class="task-priority">
+                        <div class="task-priority-text">
+                            <div class="form-group">
+                                <input type="checkbox" class="form-check-input" name="priority" value="true"
+                                    id="priority-check" ngModel>
+                                <label class="form-check-label" for="priority-check">Oznacz jako priorytet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-button-div">
+                        <button type="submit" class="btn btn-success add-button" [disabled]="!form.valid">Dodaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">AKTUALNE ZADANIA</div>
+            </div>
+            <div *ngFor="let currentTask of currentTasks">
+                <div class="tasks-div" [ngClass]="{'priority-task': currentTask.priority === true}">
+                    <div class="pending-task">
+                        <div class="row">
+                            <div class="col-9 pending-task-div">
+                                <div class="pending-task-text">{{currentTask.name}}</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-flag task-icon"
+                                        (click)="onChangePriority(currentTask.id)"></span>
+                                    <span class="bi bi-check2-square task-icon" (click)="onMarkAsDone(currentTask.id)"></span>
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteCurrentTask(currentTask.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-4">
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">WYKONANE ZADANIA</div>
+            </div>
+            <div *ngFor="let doneTask of doneTasks">
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row">
+                            <div class="col-9 pending-task-div">
+                                <div class="done-task-text">{{doneTask.name}}</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetTaskBack(doneTask.id)"></span>
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteDoneTask(doneTask.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

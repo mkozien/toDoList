@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row" id="top-row">
+        <div class="col-4">
+            <div class="item-title">
+                <div class="item-title-text">DODAJ PRODUKT</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container" (ngSubmit)="onAddProduct(form)" #form="ngForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nazwa produktu" name="name" ngModel
+                            required>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="form-group">
+                                <input class="form-control" type="number" placeholder="Ilość" name="quantity" min="0"
+                                pattern="[0-9]*" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-5" id="small-input-div">
+                            <select class="form-select" name="unit" ngModel required>
+                                <option value="" disabled selected hidden>Jedn.</option>
+                                <option value="szt.">szt.</option>
+                                <option value="kg">kg</option>
+                                <option value="g">g</option>
+                                <option value="l">l</option>
+                                <option value="ml">ml</option>
+                              </select>
+                        </div>
+                        <div class="col-2 reset-button">
+                            <span class="bi bi-x-square-fill reset-icon" (click)="onResetForm(form)"></span>
+                        </div>
+                    </div>
+                    <div class="add-button-div">
+                        <button type="submit" class="btn btn-success add-button" [disabled]="!form.valid">Dodaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">LISTA ZAKUPÓW</div>
+            </div>
+            <div *ngFor="let productToBuy of productsToBuy">
+                <div class="tasks-div">
+                    <div class="pending-task">
+                        <div class="row">
+                            <div class="col-9 pending-task-div">
+                                <div class="pending-task-text">{{productToBuy.name}} - {{productToBuy.quantity}} {{productToBuy.unit}}</div>
+                            </div>
+                            <div class="col-3 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-cart-check task-icon" (click)="onMarkAsBought(productToBuy.id)"></span>
+                                    <span class="bi bi-cart-x task-icon" (click)="onDeleteProductToBuy(productToBuy.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-4">
+        </div>
+        <div class="col-8">
+            <div class="item-title">
+                <div class="item-title-text">ZAKUPIONE PRODUKTY</div>
+            </div>
+            <div *ngFor="let boughtProduct of boughtProducts">
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row">
+                            <div class="col-9 done-task-div">
+                                <div class="done-task-text">{{boughtProduct.name}} - {{boughtProduct.quantity}} {{boughtProduct.unit}}</div>
+                            </div>
+                            <div class="col-3 done-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetProductBack(boughtProduct.id)"></span>
+                                    <span class="bi bi-cart-x task-icon" (click)="onDeleteBoughtProduct(boughtProduct.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

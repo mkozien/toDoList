@@ -1,0 +1,43 @@
+.navbar {
+  background-color: rgba(35, 35, 39, 0.9);
+  padding: 0;
+  border-top: 1px solid white;
+}
+
+#nav-tasks, #nav-shop, #nav-books {
+  color: white;
+  padding: 8px;
+  border-right: 1px solid;
+  border-color: white;
+}
+
+#nav-main {
+    color: white;
+    padding: 8px;
+    border-left: 1px solid;
+    border-color: white;
+}
+
+#nav-tasks:hover {
+    background-color: #198754;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#nav-shop:hover {
+    background-color: #000063;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#nav-books:hover {
+    background-color: #ff7b00;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#nav-main:hover {
+    background-color: #be2222;
+    border: 2px solid white;
+    cursor: pointer;
+}

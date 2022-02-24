@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row" id="top-row">
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">DODAJ TYTUŁ</div>
+            </div>
+            <div class="add-item-form">
+                <form class="form-container" (ngSubmit)="onAddBook(form)" #form="ngForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tytuł" name="title" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Autor" name="author" ngModel required>
+                    </div>
+                    <div class="button-div">
+                        <button type="submit" class="btn btn-success add-button" [disabled]="!form.valid">Dodaj</button>
+                        <button type="button" class="btn btn-danger reset-button" (click)="onResetForm(form)">Resetuj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">W TRAKCIE CZYTANIA</div>
+            </div>
+            <div *ngFor="let bookPending of booksPending">
+                <div class="tasks-div pending">
+                    <div class="pending-task">
+                        <div class="row task-row">
+                            <div class="col-8 pending-task-div">
+                                <div class="pending-task-text" id="book-title">{{bookPending.title}}</div>
+                                <div class="pending-task-text">{{bookPending.author}}</div>
+                            </div>
+                            <div class="col-2 current-page-div">
+                                <div class="current-page-text" id="page-label">Strona</div>
+                                <div class="current-page-text" id="page">1220</div>
+                            </div>
+                            <div class="col-1">
+                                <div id="page-edit-icon-div">
+                                    <span class="bi bi-pen" id="page-edit-icon"></span>
+                                </div>
+                            </div>
+                            <div class="col-1 pending-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-book-fill task-icon" (click)="onMarkAsRead(bookPending.id)"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteBookPending(bookPending.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">OCZEKUJĄCE TYTUŁY</div>
+            </div>
+            <div *ngFor="let bookAwaiting of booksAwaiting">
+                <div class="tasks-div awaiting">
+                    <div class="awaiting-task">
+                        <div class="row task-row">
+                            <div class="col-9 awaiting-task-div">
+                                <div class="awaiting-task-text" id="book-title">{{bookAwaiting.title}}</div>
+                                <div class="awaiting-task-text">{{bookAwaiting.author}}</div>
+                            </div>
+                            <div class="col-3 awaiting-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-book-half task-icon" (click)="onMoveToPending(bookAwaiting.id)"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteBookAwaiting(bookAwaiting.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="item-title">
+                <div class="item-title-text">PRZECZYTANE TYTUŁY</div>
+            </div>
+            <div *ngFor="let bookRead of booksRead">
+                <div class="tasks-div marked-as-done">
+                    <div class="done-task">
+                        <div class="row task-row">
+                            <div class="col-9 done-task-div">
+                                <div class="done-task-text" id="book-title">{{bookRead.title}}</div>
+                                <div class="done-task-text">{{bookRead.author}}</div>
+                            </div>
+                            <div class="col-3 done-task-icon-div">
+                                <div class="task-icon-div">
+                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetBookBack(bookRead.id)"></span>
+                                </div>
+                                <div class="task-icon-div">
+                                    <span class="bi bi-trash task-icon" (click)="onDeleteBookRead(bookRead.id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

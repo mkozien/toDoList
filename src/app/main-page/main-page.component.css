@@ -1,0 +1,68 @@
+.row {
+  position: relative;
+  top: 40px;
+}
+
+#tasks,
+#shop,
+#books {
+  height: 138px;
+  width: 416px;
+  line-height: 130px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 30px;
+}
+
+#tasks {
+  background-color: #198754;
+  border: 1px solid #198754;
+}
+
+#shop {
+  background-color: #000063;
+  border: 1px solid #000063;
+}
+
+#books {
+  background-color: #ff7b00;
+  border: 1px solid #ff7b00;
+}
+
+#tasks #tasks-button, #shop #shop-button, #books #books-button {
+  width: 416px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+#tasks #tasks-icon, #shop #shop-icon, #books #books-icon {
+  width: 128px;
+  font-size: 60px;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  visibility: hidden;
+}
+
+#tasks:hover, #shop:hover, #books:hover {
+    height: 138px;
+    width: 416px;
+    line-height: 122px;
+    border: 5px solid rgba(35, 35, 39, 0.9);
+    cursor: pointer;
+  }
+
+#tasks:hover #tasks-button, #shop:hover #shop-button, #books:hover #books-button {
+  width: 250px;
+  font-size: 40px;
+}
+
+#tasks:hover #tasks-icon, #shop:hover #shop-icon, #books:hover #books-icon {
+  visibility: visible;
+}
+
