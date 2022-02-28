@@ -75,6 +75,10 @@ export class BooksComponent implements OnInit, OnDestroy {
     console.log(this.booksRead);
   }
 
+  switchEditMode() {
+    this.editMode = !this.editMode;
+  }
+
   ngOnInit(): void {
     this.booksAwaitingSubscription = this.bookService
       .getBooksAwaiting()

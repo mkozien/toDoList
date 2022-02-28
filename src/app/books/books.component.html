@@ -15,7 +15,8 @@
                     </div>
                     <div class="button-div">
                         <button type="submit" class="btn btn-success add-button" [disabled]="!form.valid">Dodaj</button>
-                        <button type="button" class="btn btn-danger reset-button" (click)="onResetForm(form)">Resetuj</button>
+                        <button type="button" class="btn btn-danger reset-button"
+                            (click)="onResetForm(form)">Resetuj</button>
                     </div>
                 </form>
             </div>
@@ -32,21 +33,44 @@
                                 <div class="pending-task-text" id="book-title">{{bookPending.title}}</div>
                                 <div class="pending-task-text">{{bookPending.author}}</div>
                             </div>
-                            <div class="col-2 current-page-div">
+
+
+                            <div class="col-2 current-page-div" *ngIf="editMode===false">
                                 <div class="current-page-text" id="page-label">Strona</div>
-                                <div class="current-page-text" id="page">{{bookPending.bookPageNumber}}</div>
+                                <div class="current-page-text" id="page">
+                                    {{bookPending.bookPageNumber}}</div>
                             </div>
-                            <div class="col-1">
+                            <div class="col-1" *ngIf="editMode===false">
                                 <div id="page-edit-icon-div">
-                                    <span class="bi bi-pen" id="page-edit-icon"></span>
+                                    <span class="bi bi-pen" id="page-edit-icon" (click)="switchEditMode()"></span>
                                 </div>
                             </div>
+
+
+                            <div class="col-2 current-page-div" *ngIf="editMode===true">
+                                <div class="current-page-text" id="page-label">Strona</div>
+                                <div class="current-page-text" id="page">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" placeholder="Nr strony"
+                                            name="bookPageNumber" min="0" pattern="[0-9]*" ngModel required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1" *ngIf="editMode===true">
+                                <div id="page-edit-icon-div">
+                                    <span class="bi bi-journal-check" id="page-edit-icon" (click)="switchEditMode()"></span>
+                                </div>
+                            </div>
+
+
                             <div class="col-1 pending-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-book-fill task-icon" (click)="onMarkAsRead(bookPending.id)"></span>
+                                    <span class="bi bi-book-fill task-icon"
+                                        (click)="onMarkAsRead(bookPending.id)"></span>
                                 </div>
                                 <div class="task-icon-div">
-                                    <span class="bi bi-trash task-icon" (click)="onDeleteBookPending(bookPending.id)"></span>
+                                    <span class="bi bi-trash task-icon"
+                                        (click)="onDeleteBookPending(bookPending.id)"></span>
                                 </div>
                             </div>
                         </div>
@@ -70,10 +94,12 @@
                             </div>
                             <div class="col-3 awaiting-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-book-half task-icon" (click)="onMoveToPending(bookAwaiting.id)"></span>
+                                    <span class="bi bi-book-half task-icon"
+                                        (click)="onMoveToPending(bookAwaiting.id)"></span>
                                 </div>
                                 <div class="task-icon-div">
-                                    <span class="bi bi-trash task-icon" (click)="onDeleteBookAwaiting(bookAwaiting.id)"></span>
+                                    <span class="bi bi-trash task-icon"
+                                        (click)="onDeleteBookAwaiting(bookAwaiting.id)"></span>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +121,8 @@
                             </div>
                             <div class="col-3 done-task-icon-div">
                                 <div class="task-icon-div">
-                                    <span class="bi bi-arrow-counterclockwise task-icon" (click)="onGetBookBack(bookRead.id)"></span>
+                                    <span class="bi bi-arrow-counterclockwise task-icon"
+                                        (click)="onGetBookBack(bookRead.id)"></span>
                                 </div>
                                 <div class="task-icon-div">
                                     <span class="bi bi-trash task-icon" (click)="onDeleteBookRead(bookRead.id)"></span>
