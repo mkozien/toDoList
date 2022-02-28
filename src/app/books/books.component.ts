@@ -18,6 +18,7 @@ export class BooksComponent implements OnInit, OnDestroy {
   booksPendingSubscription: Subscription;
   booksRead: Book[] = [];
   booksReadSubscription: Subscription;
+  editMode: boolean = false;
 
   constructor(private bookService: BookService) {}
 
@@ -25,7 +26,8 @@ export class BooksComponent implements OnInit, OnDestroy {
     const body: Book = new Book(
       this.bookService.idGiven++,
       form.value.title,
-      form.value.author
+      form.value.author,
+      0
     );
     console.log(body);
 
