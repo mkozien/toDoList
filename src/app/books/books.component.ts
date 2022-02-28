@@ -19,6 +19,7 @@ export class BooksComponent implements OnInit, OnDestroy {
   booksRead: Book[] = [];
   booksReadSubscription: Subscription;
   editMode: boolean = false;
+  newPageNumber: number;
 
   constructor(private bookService: BookService) {}
 
@@ -75,7 +76,13 @@ export class BooksComponent implements OnInit, OnDestroy {
     console.log(this.booksRead);
   }
 
-  switchEditMode() {
+  switchToEditMode() {
+    this.editMode = !this.editMode;
+  }
+
+  onEditPageNumber(id: number) {
+    this.bookService.editPageNumber(id, this.newPageNumber);
+    console.log(this.booksPending);
     this.editMode = !this.editMode;
   }
 

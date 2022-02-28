@@ -33,8 +33,6 @@
                                 <div class="pending-task-text" id="book-title">{{bookPending.title}}</div>
                                 <div class="pending-task-text">{{bookPending.author}}</div>
                             </div>
-
-
                             <div class="col-2 current-page-div" *ngIf="editMode===false">
                                 <div class="current-page-text" id="page-label">Strona</div>
                                 <div class="current-page-text" id="page">
@@ -42,27 +40,25 @@
                             </div>
                             <div class="col-1" *ngIf="editMode===false">
                                 <div id="page-edit-icon-div">
-                                    <span class="bi bi-pen" id="page-edit-icon" (click)="switchEditMode()"></span>
+                                    <span class="bi bi-pen" id="page-edit-icon" (click)="switchToEditMode()"></span>
                                 </div>
                             </div>
-
-
                             <div class="col-2 current-page-div" *ngIf="editMode===true">
                                 <div class="current-page-text" id="page-label">Strona</div>
                                 <div class="current-page-text" id="page">
                                     <div class="form-group">
-                                        <input class="form-control" type="number" placeholder="Nr strony"
-                                            name="bookPageNumber" min="0" pattern="[0-9]*" ngModel required>
+                                        <input class="form-control" type="number"
+                                            placeholder="{{bookPending.bookPageNumber}}" name="bookPageNumber" min="0"
+                                            pattern="[0-9]*" [(ngModel)]="newPageNumber" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-1" *ngIf="editMode===true">
                                 <div id="page-edit-icon-div">
-                                    <span class="bi bi-journal-check" id="page-edit-icon" (click)="switchEditMode()"></span>
+                                    <span class="bi bi-journal-check" id="page-edit-icon"
+                                        (click)="onEditPageNumber(bookPending.id)"></span>
                                 </div>
                             </div>
-
-
                             <div class="col-1 pending-task-icon-div">
                                 <div class="task-icon-div">
                                     <span class="bi bi-book-fill task-icon"

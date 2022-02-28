@@ -74,4 +74,9 @@ export class BookService {
     return booksReadObservable;
   }
 
+  editPageNumber(bookId: number, newPageNumber: number) {
+    const index = this.booksPending.findIndex((i) => i.id === bookId);
+    this.booksPending[index].bookPageNumber = newPageNumber;
+    console.log(this.booksPending)
+  }
 }
