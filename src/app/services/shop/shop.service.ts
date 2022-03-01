@@ -15,7 +15,13 @@ export class ShopService {
   constructor() {}
 
   addProductToBuy(product: Product) {
-    this.productsToBuy.push(product);
+    console.log(product.id);
+    if (this.productsToBuy.some((e) => e.name === product.name)) {
+      const index = this.productsToBuy.findIndex((i) => i.name === product.name);
+      this.productsToBuy[index].quantity += product.quantity;
+    } else {
+      this.productsToBuy.push(product);
+    }
     console.log(this.productsToBuy);
   }
 

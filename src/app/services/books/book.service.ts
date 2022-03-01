@@ -77,6 +77,6 @@ export class BookService {
   editPageNumber(bookId: number, newPageNumber: number) {
     const index = this.booksPending.findIndex((i) => i.id === bookId);
     this.booksPending[index].bookPageNumber = newPageNumber;
-    console.log(this.booksPending)
+    console.log(this.booksPending);
   }
 }
