@@ -18,7 +18,6 @@ export class BooksComponent implements OnInit, OnDestroy {
   booksPendingSubscription: Subscription;
   booksRead: Book[] = [];
   booksReadSubscription: Subscription;
-  editMode: boolean = false;
   newPageNumber: number;
 
   constructor(private bookService: BookService) {}
@@ -28,7 +27,8 @@ export class BooksComponent implements OnInit, OnDestroy {
       this.bookService.idGiven++,
       form.value.title,
       form.value.author,
-      0
+      0,
+      false
     );
     console.log(body);
 
@@ -76,14 +76,9 @@ export class BooksComponent implements OnInit, OnDestroy {
     console.log(this.booksRead);
   }
 
-  switchToEditMode() {
-    this.editMode = !this.editMode;
-  }
-
   onEditPageNumber(id: number) {
     this.bookService.editPageNumber(id, this.newPageNumber);
     console.log(this.booksPending);
-    this.editMode = !this.editMode;
   }
 
   ngOnInit(): void {
