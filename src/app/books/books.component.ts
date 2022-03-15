@@ -78,6 +78,7 @@ export class BooksComponent implements OnInit, OnDestroy {
 
   onEditPageNumber(id: number) {
     this.bookService.editPageNumber(id, this.newPageNumber);
+    this.newPageNumber = 0;
     console.log(this.booksPending);
   }
 
